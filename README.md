@@ -82,7 +82,7 @@ git clone https://github.com/ShakalBhau0001/File-Encryption-CLI-Tool.git
 cd File-Encryption-CLI-Tool
 ```
 
-**3. Run the GUI:**
+**3. Run the CLI:**
 
 ```bash
 python file_encryption.py
