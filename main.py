@@ -33,7 +33,6 @@ def encrypt_file(args):
     salt = secrets.token_bytes(16)
     key = derive_key(args.password, salt)
     encrypted = Fernet(key).encrypt(data)
-
     filename = os.path.basename(args.input).encode()
     out_path = args.output or (args.input + ".enc")
 
@@ -66,7 +65,6 @@ def decrypt_file(args):
 
     key = derive_key(args.password, salt)
     decrypted = Fernet(key).decrypt(encrypted)
-
     out_dir = args.output or os.path.dirname(args.input)
     out_path = os.path.join(out_dir, original_name)
 
@@ -76,12 +74,8 @@ def decrypt_file(args):
     print(f"[+] File decrypted successfully → {out_path}")
 
 
-# CLI
-
-
 def main():
     parser = argparse.ArgumentParser(description="Shadow File Encryption CLI")
-
     sub = parser.add_subparsers(dest="cmd", required=True)
 
     # Encrypt command
@@ -95,7 +89,6 @@ def main():
     dec.add_argument("--input", required=True, help="Encrypted .enc file")
     dec.add_argument("--password", required=True, help="Decryption password")
     dec.add_argument("--output", help="Output directory")
-
     args = parser.parse_args()
 
     try:
