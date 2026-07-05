@@ -10,7 +10,7 @@ This project uses **Fernet symmetric encryption** with **PBKDF2-HMAC key derivat
 ```bash
 File-Encryption-CLI-Tool/
 │
-├── file_encryption.py      # Main CLI application
+├── main.py                 # Main CLI application
 └── README.md               # Project documentation
 ```
 
@@ -85,7 +85,7 @@ cd File-Encryption-CLI-Tool
 **3. Run the CLI:**
 
 ```bash
-python file_encryption.py
+python main.py
 ```
 
 ---
@@ -95,21 +95,21 @@ python file_encryption.py
 ### 🔐 Encrypt a File
 
 ``` bash
-python file_encryption.py encrypt --input secret.pdf --password myStrongPass
+python main.py encrypt --input secret.pdf --password myStrongPass
 ```
 
 ```bash
-python file_encryption.py encrypt --input secret.pdf --password myStrongPass --output secret.enc
+python main.py encrypt --input secret.pdf --password myStrongPass --output secret.enc
 ```
 
 ### 🔓 Decrypt a File
 
 ``` bash
-python file_encryption.py decrypt --input secret.pdf.enc --password myStrongPass
+python main.py decrypt --input secret.pdf.enc --password myStrongPass
 ```
 
 ```bash
-python file_encryption.py decrypt --input secret.pdf.enc --password myStrongPass --output ./output_folder
+python main.py decrypt --input secret.pdf.enc --password myStrongPass --output ./output_folder
 ```
 
 ---
