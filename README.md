@@ -10,8 +10,11 @@ This project uses **Fernet symmetric encryption** with **PBKDF2-HMAC key derivat
 ```bash
 File-Encryption-CLI-Tool/
 │
-├── main.py                 # Main CLI application
-└── README.md               # Project documentation
+├── assets/             # Screenshots
+├── main.py             # Main CLI application
+├── interactive.py      # Rich CLI Version
+├── requirements.txt    # Project Dependancies
+└── README.md           # Project documentation
 ```
 
 ---
@@ -19,7 +22,6 @@ File-Encryption-CLI-Tool/
 ## ✨ Features
 
 ## 🔐 File Encryption
-
 - Encrypts **any file type** (video, image, audio, documents, binaries,etc.)
 - Uses **Fernet (AES-128 authenticated encryption)**
 - Password-based key derivation using **PBKDF2-HMAC (SHA256, 390,000 iterations)**
@@ -27,14 +29,12 @@ File-Encryption-CLI-Tool/
 - Stores metadata safely using a **MAGIC header**
 
 ## 🔓 File Decryption
-
 - Decrypts `.enc` encrypted files back to original format
 - Restores the **original file name and content**
 - Detects invalid or corrupted encrypted files
 - Protects against wrong password usage
 
 ## 🖥 CLI Highlights
-
 - Clean and simple **argparse-based CLI**
 - Separate commands for **Encryption and Decryption**
 - Supports custom output paths
@@ -42,6 +42,16 @@ File-Encryption-CLI-Tool/
 - Script-friendly & automation-ready
 - Works on **all platforms** (Windows / Linux / macOS)
 - **Supports all file formats**
+
+### 🎨 Rich CLI Interface
+- Colored terminal output
+- Structured key display tables
+- Styled panels for encoding/decoding results
+- Better user experience and readability
+
+### ⚡ Dual Mode Support
+- 🧼 Basic CLI → Lightweight, no dependencies
+- 🎨 Rich CLI → Enhanced UI with colors and panels
 
 ---
 
@@ -54,38 +64,49 @@ File-Encryption-CLI-Tool/
 | **cryptography (Fernet + PBKDF2HMAC)** | Encryption & key derivation |
 | **secrets**                            | Secure salt generation      |
 | **base64 / os**                        | Binary & file handling      |
+| **Rich**                               | Interactive CLI interface   |
 
 ---
-## 📌 Requirements
 
-Make sure you install required dependencies:
-
-```bash
-pip install cryptography 
-```
-
-Standard libraries like  `secrets`, `argparse`, `base64`, and `os` are already included with Python.
-
----
 
 ## ▶️ How to Run
 
-**1. Clone the repository:**
+### 1️⃣ Clone the repository
 
 ```bash
 git clone https://github.com/ShakalBhau0001/File-Encryption-CLI-Tool.git
 ```
 
-**2. Enter the project folder:**
+### 2️⃣ Enter the project directory
 
 ```bash
 cd File-Encryption-CLI-Tool
 ```
 
-**3. Run the CLI:**
+### 3️⃣ Install Dependencies
+
+```bash
+pip install rich cryptography
+```
+
+**OR**
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4️⃣ Running the Project
+
+#### Basic CLI Version
 
 ```bash
 python main.py
+```
+
+#### Rich Interactive Version
+
+```bash
+python interactive.py
 ```
 
 ---
@@ -196,6 +217,25 @@ a replacement for proper cryptographic security.
 
 ---
 
+## 📸 Preview
+
+### 1. **Encryption**
+
+![Rich CLI Preview](assets/FILE-1.png)
+
+### 2. **Decryption**
+
+![Rich CLI Preview](assets/FILE-2.png)
+
+### 3. **Info**
+
+![Rich CLI Preview](assets/FILE-3.png)
+
+### 4. **Exit**
+
+![Rich CLI Preview](assets/FILE-0.png)
+
+---
 
 ## 🪪 Author
 
